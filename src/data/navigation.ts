@@ -363,42 +363,46 @@ const templateChilds: NavItemType[] = [
   },
 ];
 
+const templateServiceChilds: NavItemType[] = [
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Vệ Sinh",
+  },
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Thay Pin Cửa",
+  },
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Bảo Trì Máy Lạnh",
+  },
+];
+
 export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
-    href: "/",
-    name: "Home",
+    href: "#",
+    name: "Trang Chủ",
+  },
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Ăn Uống",
+  },
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Chợ Cư Dân",
+  },
+  {
+    id: ncNanoId(),
+    href: "#",
+    name: "Dịch Vụ",
     type: "dropdown",
-    children: demoChildMenus,
-  },
-  {
-    id: ncNanoId(),
-    href: "#",
-    name: "Five cols",
-    type: "megaMenu",
-    megaMenu: megaMenuDemo,
-  },
-
-  {
-    id: ncNanoId(),
-    href: "#",
-    name: "Fewer cols",
-    type: "megaMenu",
-    megaMenu: megaMenu3ItemDemo,
-  },
-  {
-    id: ncNanoId(),
-    href: "#",
-    name: "Templates",
-    type: "dropdown",
-    children: templateChilds,
-  },
-  {
-    id: ncNanoId(),
-    href: "#",
-    name: "Other pages",
-    type: "dropdown",
-    children: otherPageChildMenus,
+    children: templateServiceChilds,
   },
 ];
 

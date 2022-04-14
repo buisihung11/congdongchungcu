@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionLatestPosts from "./SectionLatestPosts";
 import SectionSliderPosts from "./SectionSliderPosts";
 import SectionMagazine1 from "./SectionMagazine1";
@@ -20,6 +20,7 @@ import { DEMO_AUTHORS } from "data/authors";
 import SectionBecomeAnAuthor from "components/SectionBecomeAnAuthor/SectionBecomeAnAuthor";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import SectionSliderNewAuthors from "components/SectionSliderNewAthors/SectionSliderNewAuthors";
+import SectionSliderBrands from "components/SectionSliderBrands/SectionSliderBrands";
 import SectionMagazine4 from "./SectionMagazine4";
 import SectionAds from "./SectionAds";
 import SectionGridPosts from "./SectionGridPosts";
@@ -27,6 +28,7 @@ import SectionMagazine7 from "./SectionMagazine7";
 import SectionMagazine8 from "./SectionMagazine8";
 import SectionMagazine9 from "./SectionMagazine9";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
+import useBrands from "hooks/brands/useBrands";
 
 //
 const POSTS: PostDataType[] = DEMO_POSTS;
@@ -37,10 +39,12 @@ const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7);
 //
 
 const PageHome: React.FC = () => {
+  const { data: brands = [] } = useBrands();
+  console.log("Brands: " + brands);
   return (
     <div className="nc-PageHome relative">
       <Helmet>
-        <title>Home || Blog Magazine React Template</title>
+        <title>Trang chủ || Cộng đồng chung cư</title>
       </Helmet>
 
       {/* ======== ALL SECTIONS ======== */}
@@ -56,13 +60,13 @@ const PageHome: React.FC = () => {
             posts={POSTS.filter((_, i) => i < 3)}
           />
 
-          {/* === SECTION  === */}
+          {/* === SECTION BRANDS  === */}
           <div className="relative py-16">
             <BackgroundSection />
-            <SectionSliderNewAuthors
-              heading="Newest authors"
-              subHeading="Say hello to future creator potentials"
-              authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+            <SectionSliderBrands
+              heading="Nhãn Hàng"
+              subHeading="Các nhãn hàng có mặt tại Vinhomes Grand Park"
+              brands={brands}
               uniqueSliderClass="PageHome"
             />
           </div>
